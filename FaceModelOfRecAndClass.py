@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 # Обнаружение лица на массиве данных mixed_data
 from os import listdir #загружаем библиотеку для просмотра папок
 from os.path import isdir
@@ -88,10 +82,6 @@ def check_face(filename):
     cv2.imshow("image",image)
     cv2.waitKey(0)
 
-
-# In[ ]:
-
-
 # рассчитаем 128-мерный вектор-признак для каждого лица, используя уже обученную сеть facenet
 from numpy import load
 from numpy import expand_dims
@@ -154,10 +144,6 @@ for i in trainy:
         
 print('Validation rate:{}'.format(true_accept / len(trainy)))
 
-
-# In[ ]:
-
-
 # Создание классификатора SVM для mixed_data
 from sklearn.metrics import accuracy_score
 from random import choice
@@ -200,10 +186,6 @@ plt.ylabel('True Positive Rate')
 plt.title('Receiver operating characteristic')
 plt.legend(loc = "lower right")
 plt.show()
-
-
-# In[ ]:
-
 
 # Тестирование случайного человека
 selection = choice([i for i in range(testX.shape[0])])
